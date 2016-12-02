@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F1713" minimumToolsVersion="Xcode 7.0">
+    <entity name="Perscription" syncable="YES">
+        <attribute name="dosageFrequency" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageNumber" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageUnits" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Perscription" positionX="-63" positionY="-18" width="128" height="150"/>
+    </elements>
+</model>

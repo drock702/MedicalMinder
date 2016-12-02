@@ -1,0 +1,16 @@
+Medical Minder
+
+The purpose of this applicaiton is allow a user to store their doctors appointments, blood pressure readings, and medical perscriptions including optional reminders for when to take the medicine.
+The history of blood pressure readings and perscribed medicines will be available as well as perscription history.
+
+When doctor appointments are entered, a map with the address will be displayed.
+The user will be able to delete doctor appointments.
+
+When a perscription is entered there will be a call made to retrieve information on the drug through a web API.
+The information for the perscription includes the dosage and how often it is taken.
+This will cause a pop up for when to take including a dismiss and 5 minute snooze.
+Users will be able to delete reminders and entered perscriptions.
+Optionally, the user can add a photo of the medicine to this page for fture reference.
+
+The user can enter information about themselves including name, date of birth, blood type, in-case-of-emergency contact phone number, and name of the primary physician.
+Optionally, the user can add a photo of themselves to this page.
