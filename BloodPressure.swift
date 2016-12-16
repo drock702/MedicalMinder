@@ -29,8 +29,12 @@ class BloodPressure : NSManagedObject {
     init(dictionary: [String : AnyObject], context: NSManagedObjectContext) {
         
         // Core Data
-        let entity =  NSEntityDescription.entityForName("Doctor", inManagedObjectContext: context)!
+        let entity =  NSEntityDescription.entityForName("BloodPressure", inManagedObjectContext: context)!
         super.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        let sys = dictionary[Keys.Systolic] as! Int32
+        let dia = dictionary[Keys.Diastolic] as! Int32
+        print ("The Systolic / diastolic: \(sys) / \(dia)")
         
         // Dictionary
         diastolic = dictionary[Keys.Diastolic] as! Int

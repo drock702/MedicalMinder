@@ -24,6 +24,15 @@ class NewBloodPressureViewController: UIViewController, UITextFieldDelegate {
         diastolicText.delegate = self
     }
     
+    // Core Data Convenience. This will be useful for fetching. And for adding and saving objects as well.
+    lazy var sharedContext: NSManagedObjectContext =  {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+        }()
+    
+    func saveContext() {
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -33,7 +42,20 @@ class NewBloodPressureViewController: UIViewController, UITextFieldDelegate {
         let invalidCharacters = NSCharacterSet(charactersInString: "0123456789").invertedSet
         return string.rangeOfCharacterFromSet(invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
     }
+    
     @IBAction func saveSettings(sender: UIButton) {
+        
+        let scriptDictionary: [String : AnyObject] = [
+           // BloodPressure.Keys.Date : NameTextField.text!,
+            BloodPressure.Keys.Diastolic : diastolicText.text!,
+            BloodPressure.Keys.Systolic : systolicText.text!
+        ]
+        
+        // Now we create a new Location, using the shared Context
+        _ = BloodPressure(dictionary: scriptDictionary, context: sharedContext)
+        
+        // Save the settings and exit
+        CoreDataStackManager.sharedInstance().saveContext()
     }
     
     @IBAction func cancelSettings(sender: UIButton) {
